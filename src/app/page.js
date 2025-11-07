@@ -1,95 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+import BaseLayout from "./components/BaseLayout";
+import LandingScroll from './components/LandingScroll';
+import ThreeLetterScene from "./components/ThreeLetterScene";
+
+const studentImages = [
+  { src: '/images/landing/student-img-numberout.png', bg: '/images/landing/student-bg-numberout.jpg', alt: 'Proj 1', link: 'projA', gridArea: '1 / 1 / 2 / 2' },
+  { src: '/images/landing/student-img-makeshape.png', bg: '/images/landing/student-bg-makeshape.jpg', alt: 'Proj 2', link: 'projB', gridArea: '1 / 2 / 2 / 3' },
+  { src: '/images/landing/student-img-arcane.png', bg: '/images/landing/student-bg-arcane.jpg', alt: 'Proj 3', link: 'projC', gridArea: '3 / 2 / 4 / 3' },
+  { src: '/images/landing/student-img-spotlight.png', bg: '/images/landing/student-bg-spotlight.jpg', alt: 'Proj 4', link: 'projA', gridArea: '2 / 3 / 3 / 4' },
+  { src: '/images/landing/student-img-japanway.png', bg: '/images/landing/student-bg-japanway.jpg', alt: 'Proj 5', link: 'projB', gridArea: '3 / 2 / 4 / 3' },
+];
+
+const personalImages = [
+  { src: '/images/landing/personal-img-introspection.png', bg: '/images/landing/personal-bg-introspection.jpg', alt: 'Proj A', link: 'projA', gridArea: '1 / 2 / 2 / 3' },
+  { src: '/images/landing/personal-img-kubera.png', bg: '/images/landing/personal-bg-kubera.jpg', alt: 'Proj B', link: 'projB', gridArea: '1 / 3 / 2 / 4' },
+  { src: '/images/landing/personal-img-parallels.png', bg: '/images/landing/personal-bg-parallels.jpg', alt: 'Proj C', link: 'projC', gridArea: '2 / 1 / 3 / 2' },
+  { src: '/images/landing/personal-img-telecrumbs.png', bg: '/images/landing/personal-bg-telecrumbs.jpg', alt: 'Proj D', link: 'projA', gridArea: '2 / 3 / 3 / 4' },
+];
+
+/*
+const [isPortrait, setIsPortrait] = useState(true);
+
+// Detect orientation change
+useEffect(() => {
+  const mql = window.matchMedia("(orientation: portrait)");
+  const handleChange = (e) => setIsPortrait(e.matches);
+  setIsPortrait(mql.matches);
+  mql.addEventListener("change", handleChange);
+  return () => mql.removeEventListener("change", handleChange);
+}, []);
+*/
+
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <BaseLayout>
+      <ThreeLetterScene modelPath="/models/you're_early.gltf" />
+      <LandingScroll studentImages={studentImages} personalImages={personalImages} />
+    </BaseLayout>
   );
 }

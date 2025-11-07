@@ -1,0 +1,59 @@
+/* Full-page background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: background-image 0.5s ease-in-out;
+  }
+  
+  /* Scroll container */
+  .landingWork {
+    height: 100%; /* adjust visible area */
+    width: 80%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 2;
+    mix-blend-mode: difference !important;
+  }
+  
+  /* Track that scrolls vertically */
+  .scrollTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* spacing between sections */
+  }
+  
+  /* Each section (student/personal) */
+  .landingWorkSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+  }
+  
+  .imgWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+  /* Grid images */
+  .gridImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.3s;
+    mix-blend-mode: difference;
+    z-index: 4;
+  }

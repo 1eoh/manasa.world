@@ -1,0 +1,40 @@
+.work-page {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .floating-menu {
+    display: flex;
+    gap: 4rem;
+    background: #e8e8e8;
+    border-radius: 2rem;
+    padding: 2rem 3rem;
+    border: 1px black solid;
+  }
+  
+  .menu-group h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: black;
+    text-transform: uppercase;
+  }
+  
+  .menu-item {
+    cursor: pointer;
+    color: black;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .menu-item:hover {
+    color: yellow;
+    transform: translateX(5px);
+  }
+  
