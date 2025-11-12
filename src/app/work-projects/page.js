@@ -1,14 +1,10 @@
-"use client";
-import { useSearchParams } from "next/navigation";
-import WorkProjects from "./WorkProjects";
-import BaseLayout from "../components/BaseLayout";
+import { Suspense } from "react";
+import WorkProjectsPageClient from "./WorkProjectsPageClient";
 
 export default function WorkProjectsPage() {
-  const searchParams = useSearchParams();
-  const project = searchParams.get("project");
   return (
-    <BaseLayout>
-      <WorkProjects initialProject={project} />
-    </BaseLayout>
+    <Suspense fallback={<div>Loading...</div>}>
+      <WorkProjectsPageClient />
+    </Suspense>
   );
 }
