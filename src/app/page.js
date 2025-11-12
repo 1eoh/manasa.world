@@ -13,7 +13,7 @@ const studentImages = [
 
 const personalImages = [
   { src: '/images/landing/personal-img-observations.png', bg: '/images/landing/personal-bg-observations.jpg', alt: 'Proj 2', link: 'proj2', gridArea: '1 / 2 / 2 / 3' },
-  { src: '/images/landing/personal-img-kubera.png', bg: '/images/landing/personal-bg-kubera.jpg', alt: 'Proj 1', link: 'proj1', gridArea: '1 / 3 / 2 / 4' },
+  { src: '/images/landing/personal-img-kubera.png', bg: '/images/landing/personal-bg-kubera-variant.jpg', alt: 'Proj 1', link: 'proj1', gridArea: '1 / 3 / 2 / 4' },
   { src: '/images/landing/personal-img-parallels.png', bg: '/images/landing/personal-bg-parallels.jpg', alt: 'Proj 3', link: 'proj3', gridArea: '2 / 1 / 3 / 2' },
 ];
 

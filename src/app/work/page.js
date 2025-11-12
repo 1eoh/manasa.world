@@ -14,7 +14,7 @@ const projectsGroup1 = [
 ];
 
 const projectsGroup2 = [
-  { name: "Kubera", image: "/images/landing/personal-bg-kubera.jpg", id: "proj1" },
+  { name: "Kubera", image: "/images/landing/personal-bg-kubera-variant.jpg", id: "proj1" },
   { name: "Observations", image: "/images/landing/personal-bg-observations.jpg", id: "proj2" },
   { name: "Parallels", image: "/images/landing/personal-bg-parallels.jpg", id: "proj3" },
   /*{ name: "Telecrumbs", image: "/images/landing/personal-bg-observations.jpg", id: "proj4" },*/
@@ -25,7 +25,7 @@ const backgroundImages = [
   "/images/work/work-colorful-bg-makeshape.jpg",
   "/images/work/work-colorful-bg-arcane.jpg",
   "/images/work/work-colorful-bg-japanway.jpg",
-  "/images/work/work-colorful-bg-kubera.jpg",
+  "/images/work/work-colorful-bg-kubera-variant.jpg",
   "/images/work/work-colorful-bg-observations.jpg",
   "/images/work/work-colorful-bg-parallels.jpg"
 ];
@@ -121,7 +121,7 @@ export default function WorkPage() {
             }}
           >
             <div className="menu-group">
-              <h4>{`(Student Work)`}</h4>
+              {/*<h4>{`(Student Work)`}</h4>*/}
               {projectsGroup1.map((p) => (
                 <div
                   key={p.id}
@@ -136,7 +136,7 @@ export default function WorkPage() {
             </div>
 
             <div className="menu-group">
-              <h4>{`(Personal Work)`}</h4>
+              {/*<h4>{`(Personal Work)`}</h4>*/}
               {projectsGroup2.map((p) => (
                 <div
                   key={p.id}
