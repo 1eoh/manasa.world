@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const PlaySection = ({ images, height = 500, delay = 0.1 }) => {
   const [index, setIndex] = useState(0);
+  const [isPortrait, setIsPortrait] = useState(false);
 
   useEffect(() => {
     if (!images || images.length === 0) return;
@@ -11,6 +12,16 @@ const PlaySection = ({ images, height = 500, delay = 0.1 }) => {
     }, delay);
     return () => clearInterval(interval);
   }, [images, delay]);
+
+  // Detect orientation
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPortrait(window.innerHeight > window.innerWidth);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div 
@@ -21,7 +32,7 @@ const PlaySection = ({ images, height = 500, delay = 0.1 }) => {
         overflow: 'hidden', 
         display: 'flex', 
         flexDirection: 'row', 
-        justifyContent: 'flex-end', 
+        justifyContent: isPortrait ? 'center' : 'flex-end', 
         alignItems: 'center' 
       }}>
       {images.map((src, i) => (
@@ -31,8 +42,8 @@ const PlaySection = ({ images, height = 500, delay = 0.1 }) => {
           alt={`slide-${i}`}
           style={{
             position: 'absolute',
-            width: 'auto',
-            height: '100%',
+            width: isPortrait ? '100%' : 'auto',
+            height: isPortrait ? 'auto' : '100%',
             objectFit: 'cover',
             opacity: i === index ? 1 : 0,
             transition: 'opacity 0.2s ease-in-out', // very quick, almost instant

@@ -4,35 +4,14 @@ import "./BaseLayout.css";
 export default function BaseLayout({ children }) {
   return (
     <main className="page">
-      {/* SVG filter definition */}
-      <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
-        <filter id="grain">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.7"
-            numOctaves="4"
-            stitchTiles="stitch"
-          >
-            <animate
-              attributeName="baseFrequency"
-              dur="4s"
-              values="0.8;0.9;0.8"
-              repeatCount="indefinite"
-            />
-          </feTurbulence>
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-      </svg>
 
-      {/* Overlay layer */}
-      <div className="grain-overlay" />
 
       {/* Center content */}
       <div className="center-content">{children}</div>
 
       {/* Top links */}
       <div className="top-edge">
-        {/*<Link href="/work">Work</Link> / <Link href="/play">Play</Link>*/}
+        <Link href="/">Home</Link> / <Link href="/work">Work</Link> / <Link href="/play">Play</Link>
       </div>
 
       {/* Right info */}
@@ -45,8 +24,8 @@ export default function BaseLayout({ children }) {
 
       {/* Bottom link */}
       <div className="bottom-edge">
-        {/*<Link href="/story">Story & Skills</Link>*/}
-        <h1>The ink's not dry yet</h1>
+        <Link href="/story">Notes on Self</Link>
+        {/*<h1>The ink's not dry yet</h1>*/}
       </div>
 
       {/* Left info */}

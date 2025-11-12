@@ -1,40 +1,59 @@
-.work-page {
+.work-title {
+  mix-blend-mode: difference !important;
+}
+
+.work-page-background {
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
     transition: background-image 0.8s ease-in-out;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    z-index: 2;
+    /*mix-blend-mode: difference !important;*/
+  }
+  
+  .floating-menu-container {
+    position: fixed;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .floating-menu {
+    position: absolute;
     display: flex;
     gap: 4rem;
-    background: #e8e8e8;
-    border-radius: 2rem;
+    /*background: #e8e8e8;
+    border-radius: 2rem;*/
+    /*background-image: url('/images/work-menu-cloud.png');
+    background-size: cover;
+    background-position: center;*/
     padding: 2rem 3rem;
-    border: 1px black solid;
+    /*border: 1px black solid;*/
   }
   
-  .menu-group h3 {
+  .menu-group h4 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     color: black;
-    text-transform: uppercase;
   }
   
   .menu-item {
     cursor: pointer;
     color: black;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
     transition: transform 0.3s, color 0.3s;
+    font-weight: bold;
   }
   
   .menu-item:hover {
-    color: yellow;
-    transform: translateX(5px);
+    text-decoration: underline;
+    /*transform: translateX(5px);*/
   }
   
