@@ -21,11 +21,15 @@ export default function GiftTextBlobs() {
   const vB1 = isPortrait ? vBP1 : vBL1;
   const vB2 = isPortrait ? vBP2 : vBL2;
 
+    {/*"I began with logic — clean, sharp, certain.",
+    "Then the world got louder, sense kept slipping away.",
+    "What's left behind starts to look like design.",*/}
 
   const sentences = [
-    "I began with logic — clean, sharp, certain.",
-    "Then the world got louder, sense kept slipping away.",
-    "What's left behind starts to look like design."
+    "between past and present, chaos and order —",
+    "that's where i make,",
+    "where i meet it,",
+    "while the world rearranges itself."
   ];
 
   useEffect(() => {
@@ -41,14 +45,14 @@ export default function GiftTextBlobs() {
       const timeout = setTimeout(() => {
         setText(currentSentence.slice(0, index + 1)); // ✅ start at 0 properly
         setIndex((i) => i + 1);
-      }, 100);
+      }, 80);
       return () => clearTimeout(timeout);
     } else {
       const timeout = setTimeout(() => {
         setIndex(0);
         setSentenceIndex((s) => (s + 1) % sentences.length); // loop sentences
         setText("");
-      }, 1500); // pause before next sentence
+      }, 400); // pause before next sentence
       return () => clearTimeout(timeout);
     }
   }, [index, sentenceIndex]);
@@ -56,6 +60,7 @@ export default function GiftTextBlobs() {
   return (
     <div className={`stage ${isPortrait ? "portrait" : "landscape"}`}>
       <div className="center">
+        {/*<img src={"images/subjects-story.png"} className="subjects" />*/}
         <svg
           className="blobSvg"
           viewBox={viewBoxDimensions}
@@ -124,8 +129,8 @@ export default function GiftTextBlobs() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: flex-start;
-          padding-top: 4rem;
+          justify-content: center;
+          padding-top: 0;
           background-image: url('/images/notes-on-self-bg.jpg');
           background-size: cover;
           background-position: center;
@@ -139,6 +144,13 @@ export default function GiftTextBlobs() {
           align-items: center;
           justify-content: center;
         }
+
+        /*.subjects {
+          width: 80vw;
+          height: auto;
+          position: absolute;
+          z-index: 100;
+        }*/
 
         .blobSvg {
           width: 80%;

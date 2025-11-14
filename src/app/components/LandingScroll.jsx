@@ -31,7 +31,7 @@ export default function LandingWorkScroll({ studentImages, personalImages }) {
     const track = trackRef.current;
     if (!track) return;
 
-    const speed = 0.5; // pixels per frame
+    const speed = 2; // pixels per frame
 
     const animate = () => {
       // Move scroll
