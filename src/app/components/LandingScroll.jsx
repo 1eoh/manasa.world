@@ -97,7 +97,7 @@ export default function LandingWorkScroll({ studentImages, personalImages }) {
                   data-bg={img.bg} // used for hover detection
                   className={styles.gridImage}
                   //style={{ gridArea: img.gridArea }}
-                  onClick={() => handleClick(img.link)}
+                  //onClick={() => handleClick(img.link)}
                 />
                 </div>
               ))}

@@ -7,16 +7,16 @@ import { useRouter } from "next/navigation";
 import './workpage.css';
 
 const projectsGroup1 = [
-  { name: "Number Out", image: "/images/landing/student-bg-numberout.jpg", id: "projA" },
-  { name: "Make/Shape", image: "/images/landing/student-bg-makeshape.jpg", id: "projB" },
-  { name: "Arcane", image: "/images/landing/student-bg-arcane.jpg", id: "projC" },
-  { name: "Japanway", image: "/images/landing/student-bg-japanway.jpg", id: "projD" },
+  { name: "Number Out (Brand Identity)", image: "/images/landing/student-bg-numberout.jpg", id: "projA" },
+  { name: "Make/Shape (Cover Art)", image: "/images/landing/student-bg-makeshape.jpg", id: "projB" },
+  { name: "Arcane (Package Design)", image: "/images/landing/student-bg-arcane.jpg", id: "projC" },
+  { name: "Japanway (Website Design)", image: "/images/landing/student-bg-japanway.jpg", id: "projD" },
 ];
 
 const projectsGroup2 = [
-  { name: "Kubera", image: "/images/landing/personal-bg-kubera-variant.jpg", id: "proj1" },
-  { name: "Parallels", image: "/images/landing/personal-bg-parallels.jpg", id: "proj2" },
-  { name: "Observations", image: "/images/landing/personal-bg-observations.jpg", id: "proj3" },
+  { name: "Kubera (Poster Design)", image: "/images/landing/personal-bg-kubera-variant.jpg", id: "proj1" },
+  { name: "The Parallels (Zine)", image: "/images/landing/personal-bg-parallels.jpg", id: "proj2" },
+  { name: "Observations (Artwork)", image: "/images/landing/personal-bg-observations.jpg", id: "proj3" },
   /*{ name: "Telecrumbs", image: "/images/landing/personal-bg-observations.jpg", id: "proj4" },*/
 ];
 
@@ -99,16 +99,20 @@ export default function WorkPage() {
         className="work-page-background"
         style={{
           backgroundImage: `url(${bgImage})`,
-          justifyContent: isPortrait ? "center" : "flex-start",
+          justifyContent: "center"
         }}
       >
+      <div className="menu-blobs"
+      style={{
+        flexDirection: isPortrait ? "column" : "row"
+      }}>
       <div className="floating-menu-container">
           <img
             src="/images/work-menu-cloud.png"
             style={{
-              transform: "rotate(90deg)",
-              width: isPortrait ? "100%" : "auto",
-              height: isPortrait ? "auto" : "100%",
+              /*transform: "rotate(90deg)",*/
+              width: isPortrait ? "80%" : "80%",
+              height: isPortrait ? "auto" : "80%",
             }}
           />
           <div
@@ -119,7 +123,7 @@ export default function WorkPage() {
             }}
           >
             <div className="menu-group">
-              {/*<h4>{`(Student Work)`}</h4>*/}
+              <h4>{`STUDENT WORK`}</h4>
               {projectsGroup1.map((p) => (
                 <div
                   key={p.id}
@@ -133,8 +137,27 @@ export default function WorkPage() {
               ))}
             </div>
 
+          </div>
+      </div>
+      <div className="floating-menu-container">
+          <img
+            src="/images/work-menu-cloud.png"
+            style={{
+              /*transform: "rotate(90deg)",*/
+              width: isPortrait ? "80%" : "80%",
+              height: isPortrait ? "auto" : "80%",
+            }}
+          />
+          <div
+            className="floating-menu"
+            style={{
+              flexDirection: "column",
+              columnGap: "2rem",
+            }}
+          >
+
             <div className="menu-group">
-              {/*<h4>{`(Personal Work)`}</h4>*/}
+              <h4>{`PERSONAL WORK`}</h4>
               {projectsGroup2.map((p) => (
                 <div
                   key={p.id}
@@ -148,6 +171,7 @@ export default function WorkPage() {
               ))}
             </div>
           </div>
+      </div>
       </div>
       </div>
     </BaseLayout>
