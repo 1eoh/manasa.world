@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Keyboard } from "swiper/modules";
+import VideoBlob from "./VideoBlob";
 import "swiper/css";
 
 const projects = [
@@ -53,6 +54,7 @@ const projects = [
       "/images/work/makeshape/student-makeshape-desc.png",
       "/images/work/makeshape/student-makeshape-brief.png",
       "/images/work/makeshape/student-makeshape-idea.png",
+      "https://telecrumbs.b-cdn.net/Logotype%20Timelapse.mp4",
       "/images/work/makeshape/student-makeshape-explorations.png",
       "/images/work/makeshape/student-makeshape-thumbnails.png",
       "/images/work/makeshape/student-makeshape-execution.png",
@@ -319,43 +321,65 @@ export default function WorkProjects({ initialProject }) {
           height: "100%",
         }}
       >
-        {slides.map((imgSrc, i) => (
-          <SwiperSlide key={`${currentProject.id}-${i}`}>
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src={imgSrc}
-                alt={`${currentProject.title} - slide ${i + 1}`}
-                style={{
-                  width: "80%",
-                  height: "100%",
-                  objectFit: "contain",
-                }}
-              />
-              {i === 0 && (
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "2rem",
-                    left: "2rem",
-                    color: "#fff",
-                    fontSize: "1.5rem",
-                    textShadow: "0 0 10px rgba(0,0,0,0.5)",
-                    zIndex: 3,
-                  }}
-                >
-                </div>
-              )}
-            </div>
-          </SwiperSlide>
-        ))}
+{slides.map((src, i) => {
+  const isVideo = src.endsWith(".mp4") || src.includes("telecrumbs");
+
+  return (
+    <SwiperSlide key={`${currentProject.id}-${i}`}>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {isVideo ? (
+          /*<video
+            src={src}
+            controls
+            autoPlay={true}
+            muted={true}
+            playsInline
+            style={{
+              width: "80%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+            onPlay={(e) => console.log("Playing slide video", i)}
+          />*/
+          <VideoBlob src={src} />
+        ) : (
+          <img
+            src={src}
+            alt={`${currentProject.title} - slide ${i + 1}`}
+            style={{
+              width: "80%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        )}
+
+        {i === 0 && (
+          <div
+            style={{
+              position: "absolute",
+              top: "2rem",
+              left: "2rem",
+              color: "#fff",
+              fontSize: "1.5rem",
+              textShadow: "0 0 10px rgba(0,0,0,0.5)",
+              zIndex: 3,
+            }}
+          ></div>
+        )}
+      </div>
+    </SwiperSlide>
+  );
+})}
+
       </Swiper>
 
     </div>

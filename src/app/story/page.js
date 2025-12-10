@@ -1,5 +1,5 @@
 import BaseLayout from "../components/BaseLayout";
-import GiftTextBlobs from "./GifTextblobs";
+import GifTextBlobs from "./GifTextblobs";
 import "./story.css";
 
 
@@ -15,7 +15,7 @@ export default function StoryPage() {
                         height: "100%",
                         objectFit: "contain",
                       }}/>*/}
-      <GiftTextBlobs />
+      <GifTextBlobs />
     </BaseLayout>
   );
 }

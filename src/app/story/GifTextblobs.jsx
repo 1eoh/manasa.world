@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 
-export default function GiftTextBlobs() {
+export default function GifTextBlobs() {
   const [isPortrait, setIsPortrait] = useState(false);
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
@@ -93,6 +93,14 @@ export default function GiftTextBlobs() {
               y="0"
             />
           </g>
+            {/* ✨ Blob Border (Visible Outline) */}
+            <use
+                href="#cloudBlob"
+                stroke="black"
+                strokeWidth="2"
+                fill="none"
+                style={{ pointerEvents: "none" }}
+            />
         </svg>
       </div>
 
