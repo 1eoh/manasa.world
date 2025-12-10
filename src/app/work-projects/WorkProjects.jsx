@@ -69,6 +69,7 @@ const projects = [
       "/images/work/makeshape/portrait/student-makeshape-desc.png",
       "/images/work/makeshape/portrait/student-makeshape-brief.png",
       "/images/work/makeshape/portrait/student-makeshape-idea.png",
+      "https://telecrumbs.b-cdn.net/Logotype%20Timelapse.mp4",
       "/images/work/makeshape/portrait/student-makeshape-exploration-1.png",
       "/images/work/makeshape/portrait/student-makeshape-exploration-2.png",
       "/images/work/makeshape/portrait/student-makeshape-thumbnails-1.png",
