@@ -28,12 +28,22 @@ export default function GifTextBlobs() {
     "between past and future, chaos and order —",
     "that's where i make,",
     "where i meet it,",
-    "while the world rearranges itself.",*/}
+    "while the world rearranges itself.",*/
+
+    /*"With a background in computers, history, and the environment, ",
+    "I bring a wide lens to branding ", 
+    "and translate complex ideas into visual identities that are relatable & memorable."*/
+  }
 
   const sentences = [
-    "With a background in computers, history, and the environment, ",
-    "I bring a wide lens to branding ", 
-    "and translate complex ideas into visual identities that are relatable & memorable."
+    "I began with logic — clean, sharp, certain.",
+    "Then the world got louder, sense kept slipping away.",
+    "What's left behind starts to look like creativity.",
+    
+    "between past and future, chaos and order —",
+    "that's where i make,",
+    "where i meet it,",
+    "while the world rearranges itself."
   ];
 
   useEffect(() => {

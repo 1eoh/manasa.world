@@ -19,7 +19,7 @@ export default function BaseLayout({ children }) {
         {/*
         Recently: Read <a href="https://en.wikipedia.org/wiki/Camera_Lucida_(book)" target="_blank" rel="noopener noreferrer">Camera Lucida</a>
         */}
-        Graphic Design
+        Problem Solving
       </div>
 
       {/* Bottom link */}
