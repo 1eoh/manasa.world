@@ -40,9 +40,9 @@ export default function GifTextBlobs() {
     "Then the world got louder, sense kept slipping away.",
     "What's left behind starts to look like creativity.",
     
-    "between past and future, chaos and order —",
-    "that's where i make,",
-    "where i meet it,",
+    "Between past and future, chaos and order —",
+    "that's where I make,",
+    "where I meet it,",
     "while the world rearranges itself."
   ];
 
